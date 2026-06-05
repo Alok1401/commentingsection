@@ -29,7 +29,7 @@ A safe, accessible, and user-friendly **multilingual comment system** with real-
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/YOUR_USERNAME/commentingsection.git
+git clone https://github.com/Alok1401/commentingsection.git
 ```
 
 2. **Copy to your web server**
