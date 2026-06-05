@@ -1,0 +1,26 @@
+# Dependencies
+/vendor/
+/node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Flutter (not part of this project)
+/flutter/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+
+# Scripts
+update_xampp.sh

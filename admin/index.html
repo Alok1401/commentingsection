@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Admin Dashboard - Multilingual Comment System Moderation">
+    <title>🛡️ Admin Dashboard — Comment System</title>
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+    <style>@keyframes spin{to{transform:rotate(360deg)}}.spinner{display:inline-block}</style>
+</head>
+<body>
+    <header class="admin-header">
+        <h1>🛡️ Admin Dashboard</h1>
+        <a href="../index.html" class="back-link">← Back to Comments</a>
+    </header>
+
+    <div class="admin-layout">
+        <!-- Stats -->
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card"><div class="icon">⏳</div><div class="value">—</div><div class="label">Loading...</div></div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab active" data-tab="all" onclick="switchTab('all')">All Comments</button>
+            <button class="tab" data-tab="active" onclick="switchTab('active')">Active</button>
+            <button class="tab" data-tab="hidden" onclick="switchTab('hidden')">Hidden</button>
+            <button class="tab" data-tab="removed" onclick="switchTab('removed')">Removed</button>
+            <button class="tab" data-tab="logs" onclick="switchTab('logs')">Mod Logs</button>
+        </div>
+
+        <!-- Search -->
+        <div id="commentsSection">
+            <div class="search-bar">
+                <input type="text" placeholder="Search comments by text, username, or city..." oninput="searchComments(this.value)">
+            </div>
+            <div id="commentsList">
+                <div class="loading-admin">Loading comments...</div>
+            </div>
+        </div>
+
+        <!-- Logs -->
+        <div id="logsSection" style="display:none">
+            <div id="logsList">
+                <div class="loading-admin">Loading logs...</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>
