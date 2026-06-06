@@ -2,10 +2,25 @@
 
 A safe, accessible, and user-friendly **multilingual comment system** with real-time translation, likes/dislikes, auto-moderation, and city display.
 
+<p align="center">
+  <a href="http://alokcomments.fwh.is/index.html"><img src="https://img.shields.io/badge/🌐_LIVE_WEBSITE-Visit_Now-00D4AA?style=for-the-badge&logoColor=white" alt="Live Website"></a>
+  <a href="http://alokcomments.fwh.is/admin/index.html"><img src="https://img.shields.io/badge/🛡️_ADMIN_PANEL-Open_Dashboard-8B5CF6?style=for-the-badge&logoColor=white" alt="Admin Dashboard"></a>
+</p>
+
 ![Version](https://img.shields.io/badge/Version-1.0-8B5CF6?style=for-the-badge)
 ![PHP](https://img.shields.io/badge/PHP-8.0+-06D6A0?style=for-the-badge&logo=php&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-FF3CAC?style=for-the-badge&logo=mysql&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-2B86C5?style=for-the-badge)
+
+---
+
+## 🌍 Live Demo
+
+> **👉 [Click here to open the Live Comment System](http://alokcomments.fwh.is/index.html)**
+>
+> **👉 [Click here to open the Admin Dashboard](http://alokcomments.fwh.is/admin/index.html)**
+
+*The GitHub Pages deployment at `https://alok1401.github.io/commentingsection/` also works and connects to the live PHP backend.*
 
 ## ✨ Features
 
