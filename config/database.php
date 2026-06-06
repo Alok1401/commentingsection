@@ -1,32 +1,19 @@
 <?php
 /**
- * Database Connection Configuration
- * Multilingual Comment System v1.0
+ * Database Connection — InfinityFree Live
  */
+error_reporting(E_ALL);
+ini_set('display_errors', 0);
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'comment_system');
-
-$conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$conn = mysqli_connect('sql206.infinityfree.com', 'if0_42102202', 'HF7xAqaubjweV', 'if0_42102202_comments');
 
 if (!$conn) {
-    // Try creating the database if it doesn't exist
-    $tempConn = mysqli_connect(DB_HOST, DB_USER, DB_PASS);
-    if ($tempConn) {
-        mysqli_query($tempConn, "CREATE DATABASE IF NOT EXISTS " . DB_NAME . " CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
-        mysqli_close($tempConn);
-        $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-    }
-    if (!$conn) {
-        die(json_encode(['error' => 'Database connection failed: ' . mysqli_connect_error()]));
-    }
+    header('Content-Type: application/json');
+    die(json_encode(['error' => 'Database connection failed']));
 }
 
-mysqli_set_charset($conn, "utf8mb4");
+mysqli_set_charset($conn, "utf8");
 
-// CORS headers for API
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
 header('Access-Control-Allow-Headers: Content-Type, Authorization');

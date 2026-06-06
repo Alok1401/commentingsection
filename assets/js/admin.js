@@ -1,7 +1,7 @@
 /**
  * Admin Dashboard - JavaScript
  */
-const API_BASE = '../api';
+const API_BASE = window.location.hostname.includes('github.io') ? 'https://alokcomments.fwh.is/api' : '../api';
 let currentTab = 'all';
 let allComments = [];
 
@@ -57,7 +57,19 @@ async function loadComments(filter) {
     allComments = comments;
     renderComments(comments);
   } catch (e) {
-    list.innerHTML = '<div class="empty-admin"><div class="emoji">⚠️</div><p>Failed to load comments</p></div>';
+    if (window.location.hostname.includes('github.io')) {
+      list.innerHTML = `
+        <div class="empty-admin">
+          <div class="emoji">⚠️</div>
+          <p>Failed to load comments from API.</p>
+          <p style="font-size:0.8rem;opacity:0.8;margin-top:10px;">
+            GitHub Pages doesn't support PHP. Open live admin:<br>
+            <a href="http://alokcomments.fwh.is/admin/index.html" target="_blank" style="color:#06D6A0;text-decoration:underline;font-weight:700">alokcomments.fwh.is/admin/index.html</a>
+          </p>
+        </div>`;
+    } else {
+      list.innerHTML = '<div class="empty-admin"><div class="emoji">⚠️</div><p>Failed to load comments</p></div>';
+    }
   }
 }
 

@@ -3,7 +3,7 @@
  * Features: Translate, Like/Dislike, City Display, Auto-moderation, Special Char Blocking
  */
 
-const API_BASE = 'api';
+const API_BASE = window.location.hostname.includes('github.io') ? 'https://alokcomments.fwh.is/api' : 'api';
 const LANGUAGES = {
   en:'English', hi:'Hindi', es:'Spanish', fr:'French', de:'German',
   ar:'Arabic', zh:'Chinese', ja:'Japanese', ko:'Korean', pt:'Portuguese',
@@ -226,7 +226,19 @@ class CommentApp {
         list.innerHTML = '<div class="empty-state"><div class="emoji">⚠️</div><p>Failed to load comments.</p></div>';
       }
     } catch (e) {
-      list.innerHTML = '<div class="empty-state"><div class="emoji">⚠️</div><p>Cannot connect to server. Make sure XAMPP is running.</p></div>';
+      if (window.location.hostname.includes('github.io')) {
+        list.innerHTML = `
+          <div class="empty-state">
+            <div class="emoji">⚠️</div>
+            <p>Cannot connect to live backend API.</p>
+            <p style="font-size:0.8rem;opacity:0.8;max-width:320px;margin:12px auto;line-height:1.6">
+              GitHub Pages does not support PHP backends. Please open the app directly on InfinityFree:<br>
+              <a href="http://alokcomments.fwh.is/index.html" target="_blank" style="color:#06D6A0;text-decoration:underline;font-weight:700">alokcomments.fwh.is/index.html</a>
+            </p>
+          </div>`;
+      } else {
+        list.innerHTML = '<div class="empty-state"><div class="emoji">⚠️</div><p>Cannot connect to server. Make sure XAMPP is running.</p></div>';
+      }
     }
   }
 
