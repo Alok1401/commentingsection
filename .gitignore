@@ -24,3 +24,6 @@ Thumbs.db
 
 # Scripts
 update_xampp.sh
+
+# Archives
+*.zip
